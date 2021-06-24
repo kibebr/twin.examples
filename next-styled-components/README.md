@@ -165,26 +165,6 @@ module.exports = {
 }
 ```
 
-<details>
-<summary>Webpack 5 config</summary>
-
-The API changed slightly in Webpack 5, so use this config instead:
-
-```js
-// next.config.js
-module.exports = {
-  future: { webpack5: true },
-  webpack: config => {
-    // Unset client-side javascript that only works server-side
-    config.resolve.fallback = { fs: false, module: false }
-
-    return config
-  },
-}
-```
-
-</details>
-
 > 'fs' is a server-side dependency which we don’t want added client-side. Adding the code above will make sure we don’t experience errors.
 
 ### Add the server stylesheet
